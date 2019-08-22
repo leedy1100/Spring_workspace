@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="you" class="com.test06.Emp" c:name="유재석" c:salary="5,000,000원"/>
+	<bean id="you2" class="com.test06.Developer" c:emp-ref="you" c:dept="개발"/>
+	
+	<bean id="kang" class="com.test06.Emp" p:name="강호동" p:salary="4,000,000원"/>
+	<bean id="kang2" class="com.test06.Engineer" p:emp-ref="kang" p:dept="기술"/>
+	
+</beans>

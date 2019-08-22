@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="today" class="java.util.Date"></bean>
+	<bean id="bar" class="com.test01.Bar"></bean>
+	<bean id="next" class="java.util.Date">
+		<property name="date" value="23"></property>
+	</bean>
+	<bean id="foo" class="com.test01.Foo" lazy-init="true">
+		<constructor-arg name="date" ref="today"></constructor-arg>
+		<property name="bar" ref="bar"></property>
+		<property name="date" ref="next"></property>
+		<property name="num">
+			<value type="short">100</value>
+		</property>
+		<property name="student">
+			<array>
+				<value>이름1</value>
+				<value>이름2</value>
+				<value>이름3</value>
+			</array>
+		</property>
+		<property name="info">
+			<list>
+				<value>봄</value>
+				<value>여름</value>
+				<value>가을</value>
+				<value>겨울</value>
+			</list>
+		</property>
+		<property name="season">
+			<map>
+				<entry>
+					<key>
+						<value>1</value>
+					</key>
+					<value>봄</value>
+				</entry>
+				<entry key="2" value="여름"></entry>
+				<entry key="3" value="가을"></entry>
+				<entry key="4" value="겨울"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="score1" class="com.test01.Score">
+		<property name="score">
+			<list>
+				<bean id="sc1" class="com.test01.Score">
+					<constructor-arg value="홍길동"></constructor-arg>
+					<constructor-arg value="100"></constructor-arg>
+					<constructor-arg value="40"></constructor-arg>
+					<constructor-arg value="70"></constructor-arg>
+				</bean>
+				<ref bean="sc2" />
+			</list>
+		</property>
+	</bean>
+	<bean id="sc2" class="com.test01.Score">
+		<constructor-arg value="이순신"></constructor-arg>
+		<constructor-arg value="90"></constructor-arg>
+		<constructor-arg value="97"></constructor-arg>
+		<constructor-arg value="99"></constructor-arg>
+	</bean>
+
+</beans>

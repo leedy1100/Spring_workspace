@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dto" class="com.test02.BirthDto">
+		<constructor-arg name="name" value="김재현"></constructor-arg>
+		<constructor-arg name="birth" value="111111"></constructor-arg>
+	</bean>
+
+	<bean id="dto2" class="com.test02.BirthDto">
+		<property name="name" value="이두영"></property>
+		<property name="birth" value="921119"></property>
+	</bean>
+</beans>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="you" class="com.test03.Developer">
+		<constructor-arg value="유재석"></constructor-arg>
+		<constructor-arg value="2500000"></constructor-arg>
+		<property name="dept" value="개발"></property>
+	</bean>
+
+	<bean id="kang" class="com.test03.Engineer">
+		<constructor-arg value="강호동"></constructor-arg>
+		<constructor-arg value="2000000"></constructor-arg>
+		<property name="dept" value="기술"></property>
+	</bean>
+</beans>

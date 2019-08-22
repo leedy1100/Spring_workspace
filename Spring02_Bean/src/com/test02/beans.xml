@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="hong" class="com.test02.Address"></bean>
+	<bean id="lee" class="com.test02.Address">
+		<constructor-arg name="name" value="이순신"></constructor-arg>
+		<constructor-arg name="addr" value="전라도"></constructor-arg>
+		<constructor-arg name="tel" value="010-1111-2222"></constructor-arg>
+	</bean>
+	<bean id="kim" class="com.test02.Address">
+		<constructor-arg name="name" value="장군님"></constructor-arg>
+		<constructor-arg name="addr" value="경기도"></constructor-arg>
+		<constructor-arg name="tel" value="010-3333-4444"></constructor-arg>
+	</bean>
+
+	<bean id="jhong" class="com.test02.JobAddress"></bean>
+
+	<bean id="jlee" class="com.test02.JobAddress">
+		<constructor-arg name="addr" ref="lee"></constructor-arg>
+		<constructor-arg name="jobName" value="기획자"></constructor-arg>
+	</bean>
+
+	<bean id="jkim" class="com.test02.JobAddress">
+		<constructor-arg name="addr" ref="kim"></constructor-arg>
+		<constructor-arg name="jobName" value="디자이너"></constructor-arg>
+	</bean>
+	
+</beans>

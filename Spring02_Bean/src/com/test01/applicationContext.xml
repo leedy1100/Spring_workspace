@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id = "apple" class="com.test01.MessageBeanImpl"></bean>
+	<bean id = "watermelon" class="com.test01.MessageBeanImpl">
+		<constructor-arg>
+			<value>watermelon</value>
+		</constructor-arg>
+		<constructor-arg value="15000"></constructor-arg>
+	</bean>
+	<bean id = "jadu" class="com.test01.MessageBeanImpl">
+		<constructor-arg value="3500" index="1"></constructor-arg>
+		<constructor-arg value="jadu" index="0"></constructor-arg>
+	</bean>
+
+</beans>
