@@ -36,11 +36,11 @@ autowire 속성값
 
 3. constructor :
 	생성자의 parameter와 같은 type의 bean 자동 할당
-	* 기본 생성자가 있으면 기본생성자 호출
 
 4. default(autodetect) :
 	생성자에 할당할 type이 있는지 먼저 확인 후, (constructor)
 	없으면 메서드에서 type이 있는지 확인하여 할당 (byType)
+	* 기본 생성자가 있으면 기본생성자 호출
 	
 	@Autowired라는 어노테이션 옵션으로 많이 쓰인다.
 
