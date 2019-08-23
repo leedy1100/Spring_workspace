@@ -6,4 +6,5 @@ public class MTest {
 		MessageBean bean = new MessageBean();
 		bean.sayHello("Spring");
 	}
+	
 }
