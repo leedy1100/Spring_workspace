@@ -21,7 +21,6 @@
 		<property name="favoriteFood" ref="favorite"></property>
 		<property name="unFavoriteFood" ref="unFavorite"></property>
 	</bean> -->
-
 	
 </beans>
 

@@ -10,7 +10,7 @@ public class MyFoodMgr {
 
 	@Autowired
 	private Food favoriteFood;
-	@Resource
+	@Autowired
 	private Food unFavoriteFood;
 
 	public MyFoodMgr() {

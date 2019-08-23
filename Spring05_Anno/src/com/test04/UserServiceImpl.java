@@ -12,7 +12,7 @@ public class UserServiceImpl implements UserService {
 
 	// TODO : 003. <bean id="myUser01" class="com.test04.UserDto"/>를 annotation으로
 	@Autowired
-	@Qualifier("myUser02")
+//	@Qualifier("myUser02")
 //	@Resource(name = "myUser022")
 	private UserDto dto;
 

@@ -8,11 +8,11 @@
 	<!-- TODO : 001. anntation 읽어서 bean 생성 -->
 	<context:component-scan base-package="com.test04"/>
 
-	<bean id="myUser01" class="com.test04.UserDto">
+	<bean id="dto" class="com.test04.UserDto">
 		<constructor-arg value="홍길동"></constructor-arg>
 	</bean>
 
-	<bean id="myUser02" name="myUser02" class="com.test04.UserDto">
+	<bean id="dto2" name="myUser02" class="com.test04.UserDto">
 		<property name="name" value="이순신"></property>
 	</bean>
 
