@@ -9,7 +9,7 @@ public abstract class AbstractTest {
 
 		GregorianCalendar cal = new GregorianCalendar();
 		int day = cal.get(Calendar.DAY_OF_WEEK);
-
+		
 		switch (day) {
 		case 1:
 			return new Sunday();
