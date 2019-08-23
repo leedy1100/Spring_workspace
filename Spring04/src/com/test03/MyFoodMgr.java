@@ -1,8 +1,16 @@
 package com.test03;
 
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MyFoodMgr {
 
+	@Autowired
 	private Food favoriteFood;
+	@Resource
 	private Food unFavoriteFood;
 
 	public MyFoodMgr() {
