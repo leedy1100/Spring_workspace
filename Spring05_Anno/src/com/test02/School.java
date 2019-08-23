@@ -16,7 +16,6 @@ public class School {
 
 	public School() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public School(Student person, int grade) {

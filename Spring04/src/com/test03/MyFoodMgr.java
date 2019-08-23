@@ -10,7 +10,7 @@ public class MyFoodMgr {
 		favoriteFood.setName("고기");
 		favoriteFood.setPrice(15000);
 	}
-
+	
 	public MyFoodMgr(Food favoriteFood, Food unFavoriteFood) {
 		this.favoriteFood = favoriteFood;
 		this.unFavoriteFood = unFavoriteFood;

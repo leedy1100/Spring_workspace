@@ -2,7 +2,7 @@ package com.test03;
 
 import org.springframework.stereotype.Component;
 
-@Component("lz")
+@Component
 public class LzTV implements TV {
 
 	@Override

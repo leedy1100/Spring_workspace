@@ -1,7 +1,12 @@
 package com.test01;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("myNick")
 public class MyNickName {
 
+	@Autowired
 	private NickName nickName;
 
 	public MyNickName() {

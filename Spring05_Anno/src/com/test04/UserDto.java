@@ -1,5 +1,6 @@
 package com.test04;
 
+
 public class UserDto {
 
 	private String name;

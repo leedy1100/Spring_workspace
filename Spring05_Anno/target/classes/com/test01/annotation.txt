@@ -37,7 +37,7 @@ spring web mvc framework는 java 5+ 부터 annotation을 제공하며, annotatio
 즉, 해당 타입의 빈 객체가 없거나 2개 이상일 경우 예외를 발생시킨다.
 프로퍼티 설정 메서드(set???) 형식이 아닌 일반 메서드에도 적용 가능하다.
 프로퍼티 설정이 필수가 아닌경우 @Autowired(required=false)로 선언한다. (기본값은 true)
-byTpe으로 의존관계를 자동으로 설정할 경우 같은 타입의 빈이 2개 이상 존재하게 되면 예외가 발생하는데 @Autowired도 이러한 문제가 발생한다.
+byType으로 의존관계를 자동으로 설정할 경우 같은 타입의 빈이 2개 이상 존재하게 되면 예외가 발생하는데 @Autowired도 이러한 문제가 발생한다.
 이럴 때, @Qualifier를 사용하면 동일한 타입의 빈 중 특정 빈을 사용하도록 하여 문제를 해결할 수 있다.
 ex)
 @Autowired
