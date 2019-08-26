@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Spring01_Hello/src"/>
+	<classpathentry kind="src" path="Spring02_Bean/src"/>
+	<classpathentry kind="src" path="Spring03/src"/>
+	<classpathentry kind="src" path="Spring04/src"/>
+	<classpathentry kind="src" path="Spring05_Anno/src"/>
+	<classpathentry kind="src" path="Spring06_AOP/src"/>
+	<classpathentry kind="output" path="Spring01_Hello/bin"/>
+</classpath>

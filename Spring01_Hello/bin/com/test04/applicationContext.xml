@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- TODO : 001. anntation 읽어서 bean 생성 -->
+	<context:component-scan base-package="com.test04"/>
+
+	<bean id="dto" class="com.test04.UserDto">
+		<constructor-arg value="홍길동"></constructor-arg>
+	</bean>
+
+	<bean id="dto2" name="myUser02" class="com.test04.UserDto">
+		<property name="name" value="이순신"></property>
+	</bean>
+
+</beans>
+
+<!--
+1. <context:annotataion-config />
+@Autowire 등의 어노테이션을 처리해주는 bean pst prcessor
+@Autowired, @Required, @Resource, @PostConstructor, @PreDestroy
+
+2. <context:component-scan base-package="???" /?
+??? 안에 있는 어노테이션들을 처리.
+(@Component, @Controller, @Service, @Reopsitory, ...)
+-> annotation-config를 확장
+
+3. <mvc:annotation-driven />
+HandlerMapping 클래스와 HandlerAdapter 클래스를 사용하여
+요청된 uri를 mapping 및 유효성 검사를 도움
+(@RequestMapping, @Valid,...)
+
+
+
+
+ -->
