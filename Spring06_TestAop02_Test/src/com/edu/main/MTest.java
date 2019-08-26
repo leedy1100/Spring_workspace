@@ -3,7 +3,6 @@ package com.edu.main;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.edu.entity.Rectangle;
 import com.edu.entity.Shape;
 
 public class MTest {
