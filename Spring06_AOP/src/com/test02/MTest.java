@@ -16,5 +16,6 @@ public class MTest {
 		Person m = factory.getBean("man", Person.class);
 		m.classWork();
 
+		
 	}
 }
