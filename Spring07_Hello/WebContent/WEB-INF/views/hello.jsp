@@ -8,6 +8,7 @@
 </head>
 <body>
 
+	<!-- TODO : 010. view response -->
 	<h1>${message }</h1>
 
 </body>

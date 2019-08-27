@@ -8,16 +8,18 @@
 		<param-value>/WEB-INF/applicationContext.xml</param-value>
 	</context-param>
 	
+	<!-- TODO : 002. listener -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	
+
+	<!--  TODO : 003. Dispathcer Servlet(hello-servlet.xml) -->	
+	<!-- /WEB-INF/[servlet-name]-servlet.xml -->
 	<servlet>
 		<servlet-name>hello</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 	</servlet>
 
-	<!-- /WEB-INF/[servlet-name]-servlet.xml -->
 	<servlet-mapping>
 		<servlet-name>hello</servlet-name>
 		<url-pattern>*.ho</url-pattern>
