@@ -1,173 +1,76 @@
 package com.mvc.dao;
 
-import static common.JDBCTemplate.*;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
 import com.mvc.dto.MVCBoardDto;
 
+@Repository
 public class MVCBoardDaoImp implements MVCBoardDao {
-	
+
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+
 	@Override
 	public List<MVCBoardDto> selectList() {
-		Connection con = getConnection();
-		Statement stmt = null;
-		ResultSet rs= null;
-		List<MVCBoardDto> list = new ArrayList<MVCBoardDto>();
-		
-		try {
-			stmt = con.createStatement();
-			System.out.println("03.query 준비 : "+ SELECT_LIST_SQL);
-			
-			rs = stmt.executeQuery(SELECT_LIST_SQL);
-			System.out.println("04.query 실행 및 리턴");
-			while(rs.next()) {
-				MVCBoardDto dto = new MVCBoardDto();
-				dto.setSeq(rs.getInt(1));
-				dto.setWriter(rs.getString(2));
-				dto.setTitle(rs.getString(3));
-				dto.setContent(rs.getString(4));
-				dto.setRegdate(rs.getDate(5));
-				
-				list.add(dto);
-			}
-			
-		} catch (SQLException e) {
-			System.out.println("03.04.error");
-			e.printStackTrace();
-			
-		}finally {
-			close(rs);
-			close(stmt);
-			close(con);
-			System.out.println("05.db 종료");
-		}
-	
+
+		List<MVCBoardDto> list = jdbcTemplate.query(SELECT_LIST_SQL, new myMapper());
+
 		return list;
 	}
 
 	@Override
 	public MVCBoardDto selectOne(int seq) {
-		Connection con = getConnection();
-		PreparedStatement pstm = null;
-		ResultSet rs = null;
-		MVCBoardDto dto = new MVCBoardDto();
-		
-		try {
-			pstm = con.prepareStatement(SELECT_ONE_SQL);
-			pstm.setInt(1, seq);
-			System.out.println("03.query 준비" + SELECT_ONE_SQL);
-			
-			rs = pstm.executeQuery();
-			System.out.println("04.query 실행 및 리턴");
-			while(rs.next()) {
-				dto.setSeq(rs.getInt(1));
-				dto.setWriter(rs.getString(2));
-				dto.setTitle(rs.getString(3));
-				dto.setContent(rs.getString(4));
-				dto.setRegdate(rs.getDate(5));
-			}
-			
-		} catch (SQLException e) {
-			System.out.println("03.04.error");
-			e.printStackTrace();
-			
-		}finally {
-			close(rs);
-			close(pstm);
-			close(con);
-			System.out.println("05.db 종료");
-		}
-		
+
+		MVCBoardDto dto = (MVCBoardDto) jdbcTemplate.queryForObject(SELECT_ONE_SQL, new Object[] { seq },
+				new myMapper());
+
 		return dto;
 	}
 
 	@Override
 	public int insert(MVCBoardDto dto) {
-		Connection con=getConnection();
-		PreparedStatement pstm = null;
-		int res = 0;
-		
-		try {
-			pstm = con.prepareStatement(INSERT_SQL);
-			pstm.setString(1, dto.getWriter());
-			pstm.setString(2, dto.getTitle());
-			pstm.setString(3, dto.getContent());
-			System.out.println("03.query 준비" + INSERT_SQL);
-			
-			res = pstm.executeUpdate();
-			System.out.println("04.query 실행 및 리턴");			
-			
-		} catch (SQLException e) {
-			System.out.println("03.04.error");
-			e.printStackTrace();
-			
-		} finally {
-			close(pstm);
-			close(con);
-		}
+
+		int res = jdbcTemplate.update(INSERT_SQL, new Object[] { dto.getWriter(), dto.getTitle(), dto.getContent() });
 
 		return res;
 	}
 
 	@Override
 	public int update(MVCBoardDto dto) {
-		Connection con=getConnection();
-		PreparedStatement pstm = null;
-		int res = 0;
-		
-		try {
-			pstm = con.prepareStatement(UPADATE_SQL);
-			pstm.setString(1, dto.getTitle());
-			pstm.setString(2, dto.getContent());
-			pstm.setInt(3, dto.getSeq());
-			System.out.println("03.query 준비" + UPADATE_SQL);
-			
-			res = pstm.executeUpdate();
-			System.out.println("04.query 실행 및 리턴");			
-			
-		} catch (SQLException e) {
-			System.out.println("03.04.error");
-			e.printStackTrace();
-			
-		} finally {
-			close(pstm);
-			close(con);
-		}
+
+		int res = jdbcTemplate.update(UPADATE_SQL, new Object[] { dto.getTitle(), dto.getContent(), dto.getSeq() });
 
 		return res;
 	}
 
 	@Override
 	public int delete(int seq) {
-		Connection con=getConnection();
-		PreparedStatement pstm = null;
-		int res = 0;
-		
-		try {
-			pstm = con.prepareStatement(DELETE_SQL);
-			pstm.setInt(1, seq);
-			System.out.println("03.query 준비" + DELETE_SQL);
-			
-			res = pstm.executeUpdate();
-			System.out.println("04.query 실행 및 리턴");			
-			
-		} catch (SQLException e) {
-			System.out.println("03.04.error");
-			e.printStackTrace();
-			
-		} finally {
-			close(pstm);
-			close(con);
-		}
+
+		int res = jdbcTemplate.update(DELETE_SQL, new Object[] { seq });
 
 		return res;
 	}
 
+	public static final class myMapper implements RowMapper<MVCBoardDto> {
+
+		@Override
+		public MVCBoardDto mapRow(ResultSet rs, int rowNum) throws SQLException {
+
+			MVCBoardDto res = new MVCBoardDto();
+			res.setSeq(rs.getInt(1));
+			res.setWriter(rs.getString(2));
+			res.setTitle(rs.getString(3));
+			res.setContent(rs.getString(4));
+			res.setRegdate(rs.getDate(5));
+
+			return res;
+		}
+	}
 }

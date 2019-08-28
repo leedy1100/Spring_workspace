@@ -2,13 +2,18 @@ package com.mvc.biz;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.mvc.dao.MVCBoardDaoImp;
 import com.mvc.dto.MVCBoardDto;
 
+@Service
 public class MVCBoardBizImp implements MVCBoardBiz {
 
-	private MVCBoardDaoImp dao = new MVCBoardDaoImp();
-	
+	@Autowired
+	private MVCBoardDaoImp dao;
+
 	@Override
 	public List<MVCBoardDto> selectList() {
 		return dao.selectList();

@@ -16,7 +16,7 @@
 
 	<h1>글 수정</h1>
 	
-	<form action="updateres">
+	<form action="updateres.do" method="post">
 		<input type="hidden" name="seq" value="${dto.seq }"/>
 		<table border="1">
 			<tr>
@@ -34,7 +34,7 @@
 			<tr>
 				<td colspan="2">
 					<input type="submit" value="수정"/>
-					<input type="button" value="취소" onclick="location.href='selectone?seq=${dto.seq }'"/>
+					<input type="button" value="취소" onclick="location.href='selectone.do?seq=${dto.seq }'"/>
 				</td>
 			</tr>
 		</table>
