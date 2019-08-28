@@ -33,14 +33,12 @@
 		</tr>
 		<tr>
 			<td colspan="2">
-				<input type="button" value="수정" onclick="location.href='update?seq=${dto.seq }'"/>&nbsp;
-				<input type="button" value="삭제" onclick="location.href='delete?seq=${dto.seq }'"/>&nbsp;
-				<input type="button" value="목록" onclick="location.href='selectall'"/>
+				<input type="button" value="수정" onclick="location.href='update.do?seq=${dto.seq }'"/>&nbsp;
+				<input type="button" value="삭제" onclick="location.href='delete.do?seq=${dto.seq }'"/>&nbsp;
+				<input type="button" value="목록" onclick="location.href='boardlist.do'"/>
 			</td>
 		</tr>
 	</table>
 		
-	</table>
-	
 </body>
 </html>

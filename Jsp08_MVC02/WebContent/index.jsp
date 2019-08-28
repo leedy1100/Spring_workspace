@@ -12,13 +12,7 @@
 </head>
 <body>
 
-	<a href="mvc.do?command=list">list</a>
-	<br/>
-	
-	<a href="selectall">목록</a><br/>
-	<a href="/selectall">목록2</a><br/>
-	<a href="./selectall">목록3</a><br/>
-	<a href="<%=request.getContextPath() %>/selectall">목록4</a><br/>
+	<a href="./boardlist.do">list</a>
 	
 </body>
 </html>

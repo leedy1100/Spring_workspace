@@ -1,8 +1,5 @@
 package com.mvc.dao;
 
-import static common.JDBCTemplate.*;
-
-import java.sql.Connection;
 import java.util.List;
 
 import com.mvc.dto.MVCBoardDto;
