@@ -14,7 +14,7 @@
 
 	<h1>글 작성</h1>
 
-	<form action="insertres">
+	<form action="insertres.do" method="post">
 		<table border="1">
 			<tr>
 				<th>작 성 자</th>
@@ -31,7 +31,7 @@
 			<tr>
 				<td colspan="2">
 					<input type="submit" value="입력"/>
-					<input type="button" value="목록" onclick="location.href='selectall'"/>
+					<input type="button" value="목록" onclick="location.href='boardlist.do'"/>
 				</td>
 			</tr>
 		</table>
