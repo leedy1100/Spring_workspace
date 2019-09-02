@@ -40,16 +40,16 @@ public class LogFilter implements Filter {
 		
 		StringBuffer sb = new StringBuffer();
 		sb.append(remoteAddr)
-		.append("\t")
-		.append(uri)
 		.append("\n")
-		.append(url)
+		.append("uri : "+uri)
 		.append("\n")
-		.append(queryString)
+		.append("url : "+url)
 		.append("\n")
-		.append(referer)
+		.append("queryString : "+queryString)
 		.append("\n")
-		.append(agent);
+		.append("referer : "+referer)
+		.append("\n")
+		.append("agent : "+agent);
 		
 		logger.info("[LOG FILTER]" + sb.toString());
 		

@@ -124,7 +124,7 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- ojdbc6.jar org.mybatis : mybatis, mybatis-spring commos-dbcp : commons-dbcp 
-			org.springframework : spring-orm -->
+			org.springframework : spring-orm 추가된 디펜더시-->
 		<!-- https://mvnrepository.com/artifact/com.oracle.jdbc/ojdbc6 -->
 		<dependency>
 			<groupId>com.oracle.jdbc</groupId>
@@ -155,7 +155,6 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
