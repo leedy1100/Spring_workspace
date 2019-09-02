@@ -1,23 +1,12 @@
 package com.hello.mvc03.common.aop;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
-@Component
 public class LogAop {
 
-	@Pointcut("execution(public * com.hello.mvc03.model.dao.*Dao*.*(..))")
-	public void pointCut() {
-		
-	}
 	
-	@Before("pointCut()")
 	public void before(JoinPoint join) {
 		Logger logger = LoggerFactory.getLogger(join.getTarget() + "");
 
@@ -37,14 +26,12 @@ public class LogAop {
 		}
 	}
 
-	@After("pointCut()")
 	public void after(JoinPoint join) {
 		Logger logger = LoggerFactory.getLogger(join.getTarget() + "");
 		logger.info("---------logger end---------");
 
 	}
 
-	@AfterThrowing("pointCut()")
 	public void afterThrowing(JoinPoint join) {
 		Logger logger = LoggerFactory.getLogger(join.getTarget() + "");
 		logger.info("error : " + join.getArgs());
