@@ -20,14 +20,7 @@
 -----------------------------------(login)
 17. pom.xml - org.codehaus.jackson/jackson-core, jackson-mapper
 			- (spring 4.x 이상) com.fasterxml.jackson/jackson-databind, jackson-core
-18. controller
-19. login.jsp
-20. controller, biz, dao 
-
-
-
-
-
-
+18. (index.jsp -> controller) login.jsp
+19. (ajax -> controller [@ResponseBody], biz. dao. mapper.xml)
 
 

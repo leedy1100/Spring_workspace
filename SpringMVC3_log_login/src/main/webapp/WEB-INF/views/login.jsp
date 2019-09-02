@@ -16,8 +16,6 @@
 		var idVal = $("#id").val();
 		var pwVal = $("#pw").val();
 		
-		alert(idVal + ":" + pwVal);
-		
 		if(idVal == "" || idVal == null){
 			alert("ID를 다시한번 확인해 주세요.");
 		}else if(pwVal == "" || pwVal == null){
@@ -31,8 +29,7 @@
 				url:"loginajax.do",
 				data:"id="+idVal+"&pw="+pwVal,
 				success:function(msg){
-					alert(msg.loginchk);
-					//consol.log(msg);
+					alert(msg);
 					if(msg.loginchk == true){
 						location.href='list.do';
 					}else{
