@@ -131,5 +131,13 @@ public class HomeController {
 
 		return map;
 	}
+	
+	@RequestMapping("/test.do")
+	public String test() {
+		
+		biz.test();
+		
+		return "redirect:list.do";
+	}
 
 }
