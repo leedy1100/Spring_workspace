@@ -128,7 +128,7 @@ public class HomeController {
 		
 		Map<String, Boolean> map = new HashMap<String, Boolean>();
 		map.put("loginchk", loginchk);
-		
+
 		return map;
 	}
 
