@@ -62,6 +62,9 @@ public class HomeController {
 			inputStream = file.getInputStream();
 			String path = WebUtils.getRealPath(request.getSession().getServletContext(), "/storage");
 		
+			// 절대경로: c:\..
+			// 상대경로: /, ./, ../
+			
 			System.out.println("업로드 될 실제 경로 : " + path);
 			
 			File storage = new File(path);
@@ -113,6 +116,7 @@ public class HomeController {
 		response.setHeader("Content-Disposition", "attachment;filename=\"" + fn + "\"");
 		response.setContentLength(bytes.length);
 		response.setContentType("image/jpeg");
+		// tomcat web.xml 확인(mime-type)
 		
 		return bytes;
 	}

@@ -21,6 +21,23 @@
 		<textarea rows="10" cols="40" name="desc"></textarea><br/>
 		<input type="submit" value="전송"/>
 	</form:form>
-
+	<!-- form:errors = Errors, BindingResult를 사용할 때 command 객체의 특정 filled에서 발생하는 에러 메시지 출력 -->
 </body>
 </html>
+
+<!-- 
+form tag의 enctype 속성
+1. application/www-form-urlencoded : (default) 모든 문자들을 encoding
+2. multipart/form-data : file upload 가능 (post)
+3. text/plain : encoding 하지 않음
+ -->
+
+
+
+
+
+
+
+
+
+
