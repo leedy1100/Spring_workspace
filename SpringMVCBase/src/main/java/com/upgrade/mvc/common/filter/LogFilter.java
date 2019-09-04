@@ -1,4 +1,4 @@
-package com.hello.mvc03.common.filter;
+package com.upgrade.mvc.common.filter;
 
 import java.io.IOException;
 
@@ -15,6 +15,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@WebFilter(filterName = "logFilter", urlPatterns = "/*")
 public class LogFilter implements Filter {
 	
 	private Logger logger = LoggerFactory.getLogger(Logger.class);
