@@ -110,7 +110,21 @@ spring boot
 3. dependency추가가 쉬움
 
 
+================================================================================================
 
+언어
+-kotlin/swift : application쪽...
+-golang
+- node.js/react.js/
+-python
+
+db
+-mariadb
+-mongodb
+
+기타
+-intellij idea
+-vscode
 
 
 
