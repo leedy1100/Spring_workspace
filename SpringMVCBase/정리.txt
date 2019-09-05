@@ -1,0 +1,139 @@
+java
+.....
+
+-type:
+type 변수 = literal;
+기본타입 : call by value
+참조타입 : call by reference
+
+String -> "??" => immutable
+String a = "";
+String b = new b();
+StringBuffer => mutable
+- method
+- opr
+- control
+- array : type[] = {}
+		type[] = new type[];
+		복사 -> shallow: 주소복사
+				deep: 값 복사
+- collection: 값 여러개 <generics>, 크기 가변
+
+		List		Set		Map
+순서	O			X		X
+중복	O			X		KX	VO
+
+iterator : 컬렉션 값을 순서대로 가져 올 수 있는 객체
+Map.Entry : key, value를 따로 관리 할 수 있는 객체
+- exception : 오류로 인한 프로그램의 멈춤을 막기 위해
+	checked exception 컴파일 전 빨간줄
+	runtime exception 실행시 발생하는 오류
+	
+- io : stream : byte
+- thread : process안의 작업단위
+process : 실제 메모리에 올라가는 실행 상태
+program : 실행 파일
+- network
+uri : identifier
+urn : name
+url : location
+
+tcp : 느림, 안정 req , res
+udp : 빠름, 불안정 req
+
+-----------------------------------------------------------------------------------------------------------------(DB)
+database
+- data저장소
+- rdb => 관계형db relation entity (attribute tuple)
+							table (column	 row)
+					
+- noSql - {mongodb:"",a:[{:},{},{}]}
+- 정규화 1,2,3,....
+- oracle 11g xe
+- SQL (Structured Query Language)
+	DDL : 정의 // create, alter, drop
+	DML : 조작 // select, update, insert, delete
+	DCL : 제어 //commit, rollback, grant, revoke
+GROUPBY HAVING WHERE
+ORDER BY
+
+JOIN - table + table
+join table1 using/on table2
+using 컬럼 이름이 같은 경우 on 컬럼 값이 같은 경우
+
+SUBQUERY
+query문 안에 (select)query
+
+PL/SQL
+
+Procedure
+cursor
+-----------------------------------------------------------------------------------------------------------------
+HTML : HyperTextMarkupLanguage - document를 tag로 구조화
+
+CSS : Cascading StyleSheet - document를 꾸며준다.
+
+JAVASCRIPT : script language - document의 event
+* function이 변수에 값으로 들어간다.
+.$ajax({
+
+})
+
+jsp/servlet
+
+webserver 정적타입을 처리 html, file
+was 동적타입을 처리 jsp
+
+servlet : java (html) 요청에 맞게 응답
+init() - > service() -> doGet()받아올때,doPost()보내줄때...-> destroy()
+
+redirect 새로운 요청이 들어옴
+forward 이전의 요청을 다음페이지까지 전달
+
+jsp : html (java) 요청에 맞게 응답
+jsp에서는 자바 코드가 먼저 실행 그 후 html 실행 응답하므로 java단에 <% %>안의 값을 넘겨 줄 수 없음
+
+-----------------------------------------------------------------------------------------------------------------
+Spring
+-> 경량 컨테이너 EJB -> POJO
+-> 특징 3개
+1. DI/IOC
+2. AOP
+3. OCP
+
+-> Spirng MVC
+동작 순서
+
+spring boot
+1. server 내장 (기본적으로 tomcat)
+2. 실행 시 java 실행, jar...
+3. dependency추가가 쉬움
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
