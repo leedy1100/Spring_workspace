@@ -40,7 +40,7 @@
 	<select id="login" parameterType="map" resultType="customerDto">
 		SELECT ID, PASSWORD, NAME
 		FROM TB_CUSTOMER
-		WHERE ID = #{id} AND PASSWORD = #{pw}
+		WHERE ID = #{id}
 	</select>
 
 </mapper>
